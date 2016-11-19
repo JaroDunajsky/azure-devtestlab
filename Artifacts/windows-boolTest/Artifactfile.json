@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
+  "title": "Bool test",
+  "description": "Uses the bool parameter type",
+  "tags": [
+    "Windows"
+  ],
+  "parameters": { 
+      "succeed": {
+          "type": "bool",
+          "displayName": "True or false?",
+          "description": "True or false?"
+      }
+   },
+  "targetOsType": "Windows",
+  "runCommand": {
+    "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./Succeed.ps1 ', parameters('succeed'), '\"')]"
+  }
+}
